@@ -4,7 +4,7 @@ import Dashboard from './components/dashboard/index.js';
 // import Login from './auth/Login'; 
 // import Register from './auth/Register'; 
 
-import './App.css';
+
 
 function App() {
   return (
