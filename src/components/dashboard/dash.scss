@@ -113,7 +113,7 @@
         flex-wrap: wrap;
         margin-top: -100px;
         margin-bottom: -170px;
-        
+       
         
         
         .form-directions{
@@ -129,12 +129,12 @@
 
         #zip-input{
             margin-right: 10px;
-            width: 230px;
+            width: 400px;
             height: 40px;
             font-size: 1.3rem;
             padding-left: 10px;
             font-family: Roboto;
-            
+            background-color: lightBlack;
             &:hover{
                 box-shadow: 0px 0px 5px  white;
                 
