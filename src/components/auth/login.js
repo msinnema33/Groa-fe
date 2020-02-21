@@ -59,14 +59,11 @@ loginUser = e => {
   render() {
 
   return (
-    <div  className='LoginForm'>
-        <div className='sentence'>
-        <h1>Your movies, your way.</h1>
-        </div>
-     
+    <div className='LoginPage'>
     
-      <form onSubmit={this.loginUser}>
-        <input className='input'
+      <form className='LoginForm' onSubmit={this.loginUser}>
+      <h1 className='textlogin'>Log in</h1>
+        <input className='input1'
           type="text"
           name="username"
           onChange={this.handleChange}
@@ -74,15 +71,42 @@ loginUser = e => {
           value={this.username}
         />
 
-        <input className='input'
+        <input className='input1'
           type="text"
           name="password"
           onChange={this.handleChange}
           placeholder="Password"
           value={this.password}
         />
+        
+        <h6 className='textOr'>or</h6>
 
-        <button className='btnLogin'>Log in</button>
+        {/* USER NAME */}
+        <input className='input2'
+          type="text"
+          name="username"
+          onChange={this.handleChange}
+          placeholder="Username"
+          value={this.username}
+        />
+        {/* PASSWORD */}
+        <input className='input2'
+          type="text"
+          name="password"
+          onChange={this.handleChange}
+          placeholder="Password"
+          value={this.password}
+        /> 
+        <div className='Bottom'>
+
+        <div className='textBot'>
+          <h4>Remember me</h4>
+          <h4>Forgot password?</h4>
+        </div> 
+        
+
+        <button className='BtnLogin'>Log in</button>
+        </div> 
       </form>
     </div> 
    )
