@@ -1,36 +1,55 @@
 import React from 'react';
+import axiosWithAuth from '../../utils/axiosWithAuth'
+
 import { connect } from 'react-redux';
 import {loginAction} from '../../store/actions/loginAction';
-import { render } from 'node-sass';
+import './login.scss';
+
 
 
 class LoginPage extends React.Component {
-    constructor(props) {
-        super(props);
+    // constructor(props) {
+    //     super(props);
 
         //reset Login
-        this.props.logout();
+        //this.props.logout();
 
-        this.state = {
+        // this.state = {
+        //     username: '',
+        //     password: '',
+        // };
+
+        state = {
+          credentials: {
             username: '',
             password: '',
-        };
-    }
+          }
+      }
 
-handleChange = e => {
-    e.target.value
-}
+    //}
+  
+    handleChange = e => {
+      this.setState({
+          credentials: {
+          ...this.state.credentials,
+          [e.target.name]: e.target.value
+          }
+      });
+  
+  };
 
+
+  
 loginUser = e => {
     e.preventDefault();
-    console.log(user)
+    //console.log(user)
       axiosWithAuth()
-      .post("/api/login", user)
+      .post("/api/login", this.state.credentials)
       .then(res => {
         localStorage.setItem('token', res.data.payload);
         console.log(res.data.payload)
         // redirect to Groas dashboard page
-        props.history.push('/');
+        this.props.history.push('/');
       })
       .catch(err => console.log(err));
       console.log('Login error post')
@@ -41,26 +60,29 @@ loginUser = e => {
 
   return (
     <div  className='LoginForm'>
-      <h1>Groa Login</h1>
+        <div className='sentence'>
+        <h1>Your movies, your way.</h1>
+        </div>
+     
     
-      <form onSubmit={loginUser}>
+      <form onSubmit={this.loginUser}>
         <input className='input'
           type="text"
           name="username"
-          onChange={handleChange}
+          onChange={this.handleChange}
           placeholder="Username"
-          value={user.username}
+          value={this.username}
         />
 
         <input className='input'
           type="text"
           name="password"
-          onChange={handleChange}
+          onChange={this.handleChange}
           placeholder="Password"
-          value={user.password}
+          value={this.password}
         />
 
-        <button>Log in</button>
+        <button className='btnLogin'>Log in</button>
       </form>
     </div> 
    )

@@ -1,7 +1,3 @@
-import axios from 'axios';
-import React from 'react';
-
-
 export const FETCHING_USER_LOGIN = "FETCHING_USER_LOGIN"
 export const FETCHING_USER_LOGIN_SUCCESS = "FETCHING_USER_LOGIN_SUCCESS"
 export const FETCHING_USER_LOGIN_FAIL = "FETCHING_USER_LOGIN_FAIL"
@@ -20,7 +16,7 @@ function login(username, password) {
                     .then(res => {
                         console.log(res)
                             dispatch({ type: FETCHING_USER_LOGIN_SUCCESS });
-                            history.push('/');
+                            //history.push('/');
                         })
                     .catch(err => {
                             console.log(err)

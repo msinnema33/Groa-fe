@@ -6,7 +6,7 @@ const initialState = {
     error:''
 }
 
-export const userLoginReducer = (state = initialState, action) => {
+export const loginReducer = (state = initialState, action) => {
     switch (action.type) {
 
         //FETCHING USER
