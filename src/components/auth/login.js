@@ -5,28 +5,14 @@ import { connect } from 'react-redux';
 import {loginAction} from '../../store/actions/loginAction';
 import './login.scss';
 
-
-
 class LoginPage extends React.Component {
-    // constructor(props) {
-    //     super(props);
-
-        //reset Login
-        //this.props.logout();
-
-        // this.state = {
-        //     username: '',
-        //     password: '',
-        // };
-
+ 
         state = {
           credentials: {
             username: '',
             password: '',
           }
       }
-
-    //}
   
     handleChange = e => {
       this.setState({
@@ -61,6 +47,13 @@ loginUser = e => {
   return (
     <div className='LoginPage'>
     
+      <div className='textMottoBoxes'>
+        <h1>Your movies,<br/> your way.</h1>
+
+        {/* <div className='box1'>picture</div>
+        <div className='box2'>Groa Helps</div> */}
+        </div>
+
       <form className='LoginForm' onSubmit={this.loginUser}>
       <h1 className='textlogin'>Log in</h1>
         <input className='input1'
@@ -79,7 +72,7 @@ loginUser = e => {
           value={this.password}
         />
         
-        <h6 className='textOr'>or</h6>
+        <h4 className='textOr'>or</h4>
 
         {/* USER NAME */}
         <input className='input2'
